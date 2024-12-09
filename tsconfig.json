@@ -1,0 +1,18 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES5",
+    "module": "ESNext"
+  },
+  "files": ["src/bytebank-styleguide.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+}
