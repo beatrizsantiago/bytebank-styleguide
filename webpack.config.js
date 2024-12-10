@@ -13,16 +13,6 @@ module.exports = (webpackConfigEnv, argv) => {
     devServer: {
       port: 8081,
     },
-    output: {
-      filename: "styleguide.js",
-      library: "styleguide",
-      libraryTarget: "umd",
-      globalObject: "this",
-    },
-    externals: {
-      react: "react",
-      "react-dom": "react-dom",
-    },
     module: {
       rules: [
         {

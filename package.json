@@ -1,8 +1,5 @@
 {
   "name": "@bytebank/styleguide",
-  "version": "1.0.0",
-  "main": "dist/styleguide.js",
-  "types": "dist/bytebank-styleguide.d.ts",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
