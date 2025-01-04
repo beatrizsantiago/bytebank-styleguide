@@ -4,22 +4,20 @@ import { ptBR } from 'date-fns/locale';
 import { PencilSimple, Trash } from '@phosphor-icons/react';
 
 export interface StatementItemProps {
-  kind: 'DEPOSIT' | 'DOC_TED' | 'CURRENCY_EXCHANGE' | 'LEASING';
+  type: 'Credit' | 'Debit';
   value: number;
   date: string;
   onEditClick?: () => void;
   onDeleteClick?: () => void;
 };
 
-const KIND_LABEL = {
-  DEPOSIT: 'Depósito',
-  DOC_TED: 'Transferência',
-  CURRENCY_EXCHANGE: 'Câmbio de Moeda',
-  LEASING: 'Empréstimo e Financiamento',
+const TYPE_LABEL = {
+  Credit: 'Depósito',
+  Debit: 'Saque',
 };
 
 const StatementItem = ({
-  kind, value, date, onEditClick, onDeleteClick,
+  type, value, date, onEditClick, onDeleteClick,
 }:StatementItemProps) => {
   const formattedMonth = format(parseISO(date), 'MMMM', { locale: ptBR });
   const month = formattedMonth[0].toUpperCase() + formattedMonth.substring(1);
@@ -47,7 +45,7 @@ const StatementItem = ({
       </div>
 
       <div className="w-full flex justify-between items-center my-2">
-        <p className="mr-4">{KIND_LABEL[kind]}</p>
+        <p className="mr-4">{TYPE_LABEL[type]}</p>
         <p className="text-sm text-gray-main">
           {format(parseISO(date), 'dd/MM/yyyy')}
         </p>
